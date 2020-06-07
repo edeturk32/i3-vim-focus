@@ -62,8 +62,6 @@ fn main() {
                 let sequence = format!("g+w+{}", direction.to_vim_direction());
                 let mods = xdo.get_active_modifiers().expect("get_active_modifiers");
                 window.clear_active_modifiers(&mods).expect("clear_active_modifiers");
-                window.send_keysequence("Escape", None)
-                    .expect("send escape");
                 window.send_keysequence(&sequence, None)
                     .expect("send gw{}");
                 window.set_active_modifiers(&mods).expect("set_active_modifiers");
